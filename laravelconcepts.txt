@@ -1,0 +1,71 @@
+// object and class  in laravel
+
+//Using Models 
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Product extends Model
+{
+    use HasFactory;
+
+    // Optional: specify the table name if it's not the plural form of the model name
+    protected $table = 'products';
+
+    // Optional: specify the columns that are mass assignable
+    protected $fillable = ['name', 'price', 'quantity'];
+
+    // Optional: specify the columns that cannot be mass-assigned
+    // protected $guarded = ['id'];
+}
+
+//create () methods for create a one record in db
+ use App\Models\Product;
+ $product = Product::create([
+'name' => 'Meghana',
+'age' => 23,
+]);
+ 
+
+ // object
+
+ use App\Models\Product;
+
+$product = new Product();
+$product->name = 'Laptop';
+$product->price = 1000;
+$product->quantity = 50;
+$product->save();
+
+//Bulk insert  -- this for inserting multiple data records in once save the time and esay
+// insert() method.
+
+use App\Models\User;
+
+$data = [
+    ['name' => 'John Doe', 'email' => 'john@example.com', 'password' => bcrypt('password')],
+    ['name' => 'Jane Smith', 'email' => 'jane@example.com', 'password' => bcrypt('password')],
+    ['name' => 'Sam Johnson', 'email' => 'sam@example.com', 'password' => bcrypt('password')],
+];
+
+User::insert($data);
+
+
+// bulk create method
+
+
+use App\Models\User;
+
+$data = [
+    ['name' => 'John Doe', 'email' => 'john@example.com', 'password' => bcrypt('password')],
+    ['name' => 'Jane Smith', 'email' => 'jane@example.com', 'password' => bcrypt('password')],
+    ['name' => 'Sam Johnson', 'email' => 'sam@example.com', 'password' => bcrypt('password')],
+];
+
+foreach ($data as $userData) {
+    User::create($userData);
+}
+
+
+  
