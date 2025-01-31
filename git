@@ -1,1 +1,54 @@
-git
+//configuration
+git config --global user.name "Your Name" – Set global username.
+git config --global user.email "your.email@example.com" – Set global email.
+// Repository Initialization & Cloning
+git init 
+git clone <repo-url>
+//staging and committing
+git status  Check status of files
+git add <file-name>  Add file to staging area
+git add .  Add all files to staging area
+git commit -m "commit message"  Commit changes with a message
+git commit --amend -m "New message" – Amend the last commit.
+git reset <file> – Unstage a file from staging area.
+//branching & merging
+git branch <branch-name>  Create a new branch
+git checkout <branch-name>  Switch to a branch
+git checkout -b <branch-name>  Create a new branch and switch to it
+git merge <branch-name> – Merge a branch into the current branch.
+git branch -d <branch-name> – Delete a branch locally.
+git push origin --delete <branch-name> – Delete a branch remotely.
+//Remote Repositories
+git remote -v – Show remote repositories.
+git remote add origin <repo-url> – Add a remote repository.
+git push origin <branch-name> – Push branch to remote.
+git push -u origin <branch-name> – Push branch and set upstream.
+git pull origin <branch-name> – Pull latest changes from a remote branch.
+// viewing logs & History
+git log – Show commit history.
+git log --oneline --graph --decorate – Compact commit history.
+git show <commit-hash> – Show details of a specific commit.
+//undoing changesgit checkout -- <file> – Discard changes in a file.
+git reset --hard – Reset all changes to last commit.
+git reset --soft HEAD~1 – Undo last commit but keep changes staged.
+//Reset & Clean
+git reset --hard HEAD – Reset everything to the last commit.
+git reset --hard <commit-hash> – Reset to a specific commit.
+git clean -f – Remove untracked files.
+git clean -fd – Remove untracked files and directories.
+//Cloning and Working on a Project:
+git clone <repo-url>
+cd <repo-name>
+git checkout -b feature-branch
+git add .
+git commit -m "Added feature"
+git push origin feature-branch
+//Keeping Your Branch Updated:
+git checkout main
+git pull origin main
+git checkout feature-branch
+git merge main
+//Resetting Last Commit:
+git reset --soft HEAD~1  # Keep changes staged
+git reset --hard HEAD~1  # Delete last commit
+
