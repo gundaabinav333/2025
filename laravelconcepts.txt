@@ -67,5 +67,5 @@ foreach ($data as $userData) {
     User::create($userData);
 }
 
-
+Write a statement using InserGetId
   
